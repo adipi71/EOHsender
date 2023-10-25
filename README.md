@@ -1,1 +1,1 @@
-# EfsaOhWgs
+# WGSjsonMgmt
