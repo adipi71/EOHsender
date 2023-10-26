@@ -8,8 +8,6 @@ EFSA One Health WGS System helping tools for Programmatic Submission
 
 Prepares JSON files for CLI and API Programmatic Submission for the EFSA One Health WGS System
 
-Prepare
-
 ## Compatibility report
   * threshold perfect: perfect match
   * threshold acceptable: Num. missing Loci + different called alleles <= 10
