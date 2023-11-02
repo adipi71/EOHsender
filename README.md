@@ -8,7 +8,10 @@ EFSA One Health WGS System helping tools for Programmatic Submission
 
 Prepares CLI and API Programmatic Submission JSON files for the EFSA One Health WGS System
 
+
+
 ## Compatibility report
+
 Calculates a compatibility report between two allelic profile result files calculated on the same sample sequences: one (*base*) coming from EFSA Analytical Pipeline and one (*test*) from a testing pipeline.
 
 **Definitions:**
@@ -21,11 +24,11 @@ Calculates a compatibility report between two allelic profile result files calcu
 
 | threshold | Description |
 | --- | --- |
-| perfect | `NumMissingLociTest + AllelesDiff == 0` |
-| acceptable | `NumMissingLociTest + AllelesDiff  <= MAX_DIFF` |
-| warning | `MIN_ALLELES_DIFF < AllelesDiff  < MAX_ALLELES_DIFF` |
-| fail | `AllelesDiff   => MAX_ALLELES_DIFF` |
-| fail | `NumMissingLociTest + AllelesDiff  > MAX_DIFF` |
+| Perfect | `NumMissingLociTest + AllelesDiff == 0` |
+| Acceptable | `NumMissingLociTest + AllelesDiff  <= MAX_DIFF` |
+| Warning | `MIN_ALLELES_DIFF < AllelesDiff  < MAX_ALLELES_DIFF` |
+| Fail | `AllelesDiff   => MAX_ALLELES_DIFF` |
+| Fail | `NumMissingLociTest + AllelesDiff  > MAX_DIFF` |
 
 **Thresholds:**
 
@@ -34,4 +37,5 @@ Calculates a compatibility report between two allelic profile result files calcu
 | *L. monocytogenes*  | 4 |  7 | 10 | 
 | *Salmonella*  | 5 |  10 | 15 | 
 | *STEC*  | 5 |  10 | 15 | 
+
 
