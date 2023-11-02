@@ -1,0 +1,67 @@
+{
+    "payload": {
+        "publicRawReadCreate": {
+            "localRawReadId": "____MANUAL_VALUE____$localRawReadId",
+            "_____OPTIONAL_______instrumentModelCode": null,
+            "isolateSpecieCode": "____MANUAL_VALUE____RF-00003072-PAR",
+            "//_____COMMENT______libraryLayoutCode" : "____MANUAL_VALUE____: 1 or 2",
+            "libraryLayoutCode": 2,
+            "_____OPTIONAL_______serotypeId": "____MANUAL_VALUE____RF-00000128-PARMCG",
+            "fastQ1FileName": "$fastQ1FileName",
+            "fastQ1Md5": "a4d7caca033ed44ef6c787c2b98339fa",
+            "fastQ2FileName": "test_2.fq.gz",
+            "fastQ2Md5": "9a8564f91378f8b3c3a992f7c0fd4f89"
+        },
+        "result": {
+            "localRawReadId": "____MANUAL_VALUE____$localRawReadId",
+            "_____OPTIONAL_______AnalyticalPipelineInfoTag": "____MANUAL_VALUE____$AnalyticalPipelineInfoTag",
+            "QualityCheck": {
+                "Fastp": {
+                    "ReadMeanLength": 200,
+                    "Q30Rate": 0.9,
+                    "TotalBases": 341193922
+                },
+                "AssemblyQualityStatistics": {
+                    "AssemblyCoverage": 30,
+                    "AssemblyStatistics": {
+                        "N50Contigs": 960000,
+                        "GenomeSize": 2965601,
+                        "NumberOfContigs": 100
+                    }
+                }
+            },
+            "Results": {
+                "ParamCode": {
+                    "MLSTSequenceType": {
+                        "ST": "$ST",
+                        "Software": "____MANUAL_VALUE____$Software",
+                        "GeneList": [
+                            {
+                                "bglA": "$bglA",
+                                "abcZ": "$abcZ",
+                                "dat": "$dat",
+                                "cat": "$cat",
+                                "ldh": "$ldh",
+                                "lhkA": "$lhkA",
+                                "dapE": "$dapE6"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "publicEpidemiologicalDataCreate":{
+        "localRawReadId": "test58",
+        "samplingData": {
+          "sampleLocalId": "cheeseXX",
+          "samplingCountryId": "PT",
+          "samplingYear": 2022,
+          "samplingMatrixCode": "A02QE",
+          "samplingMatrixFreeText": "Cheese from Alentejo region, Portugal"  
+        },
+        "isolationData": {
+          "isolationLocalId": "newisolate"
+        }          
+    }
+}

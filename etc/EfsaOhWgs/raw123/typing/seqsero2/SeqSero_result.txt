@@ -1,0 +1,9 @@
+Output directory:	/mnt/c/Users/greniersj/Source/Repos/efsa-devops_wgs/efsa.wgs.ap.onehealth/work/8b/2da3b71b1d38a3712b7f385c159afa/seqSero2
+Input files:	/mnt/c/Users/greniersj/Source/Repos/efsa-devops_wgs/efsa.wgs.ap.onehealth/work/8b/2da3b71b1d38a3712b7f385c159afa/19-SA03159-0_S9_1.fastq.gz
+O antigen prediction:	-
+H1 antigen prediction(fliC):	-
+H2 antigen prediction(fljB):	-
+Predicted identification:	Salmonella enterica subspecies enterica (subspecies I)
+Predicted antigenic profile:	-:-:-
+Predicted serotype:	I -:-:-
+Note:	No serotype antigens were detected. This is an atypical result that should be further investigated. 

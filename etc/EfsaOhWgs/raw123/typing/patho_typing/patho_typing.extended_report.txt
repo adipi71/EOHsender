@@ -1,0 +1,7 @@
+#Pathotypes_found
+STEC
+
+#Genes_present
+stx1A
+stx1B
+eae

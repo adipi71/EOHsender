@@ -1,0 +1,2 @@
+localRawReadsID	sampling_local_id	isolation_local_id	isolateSpecieCode	sampling_country_id	sampling_year	sampling_matrix_code	sampling_matrix_free_text	libraryLayoutCode	MLSTSequenceType.Software
+rawr1234	smpl1234	isol1234	RF-00003072-PAR	IT	2019	A02QE	FORMAGGIO	2	mlst 2.23.0

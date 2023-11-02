@@ -1,0 +1,51 @@
+{
+   "payload": {
+      "result": {
+         "localRawReadId": "raw1234",
+         "AnalyticalPipelineInfoTag": "GENPATNgsManager",
+         "Results": {
+            "ParamCode": {
+               "MLSTSequenceType": {
+                  "Software": "mlst 2.23.0",
+                  "ST": "155",
+                  "GeneList": [
+                     {
+                        "abcZ": "7",
+                        "bglA": "10",
+                        "cat": "16",
+                        "dapE": "7",
+                        "dat": "5",
+                        "lhkA": "2",
+                        "ldh": "2"
+                     }
+                  ]
+               }
+            }
+         },
+         "QualityCheck": {
+            "Fastp": {
+               "ReadMeanLength": 149,
+               "Q30Rate": 92.30,
+               "TotalBases": 254600
+            },
+            "AssemblyQualityStatistics": {
+               "AssemblyStatistics": {
+                  "N50Contigs": 729781,
+                  "GenomeSize": 3053558,
+                  "NumberOfContigs": 17
+               },
+               "AssemblyCoverage": 76
+            }
+         }
+      },
+      "publicRawReadCreate": {
+         "localRawReadId": "raw1234",
+         "isolateSpecieCode": "RF-00000251-MCG",
+         "libraryLayoutCode": 2,
+         "fastQ1FileName": "DS1-DT1_raw1234_R1_001.fastq.gz",
+         "fastQ1Md5": "f6cacaf66543a3c08a7f8b0f64a6ba48",
+         "fastQ2FileName": "DS1-DT1_raw1234_R2_001.fastq.gz",
+         "fastQ2Md5": "fd5f736ec11e8c3abf6e3fbb28942075"
+      }
+   }
+}

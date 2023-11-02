@@ -1,0 +1,105 @@
+{
+    "payload": {
+        "result": {
+            "localRawReadId": "test2345235",
+            "AnalyticalPipelineInfoTag": "ecolipipeline",
+            "QualityCheck": {
+                "Fastp": {
+                    "ReadMeanLength": 148,
+                    "Q30Rate": 0.92,
+                    "TotalBases": 218814328
+                },
+                "AssemblyQualityStatistics": {
+                    "AssemblyCoverage": 90,
+                    "AssemblyStatistics": {
+                        "N50Contigs": 195512,
+                        "GenomeSize": 5132426,
+                        "NumberOfContigs": 111
+                    }
+                }
+            },
+            "Results": {
+                "ParamCode": {
+                    "PredictedPathotype": {
+                        "Pathotype": "NA",
+                        "VeroToxin": {
+                            "VT1Positive": false,
+                            "VT2Positive": true
+                        },
+                        "AdhesionGenes": {
+                            "eaePositive": false,
+                            "aatPositive": false,
+                            "aggRPositive": false,
+                            "aaiCPositive": false
+                        },
+                        "Software": "patho_typing",
+                        "GeneList": [
+                            {
+                                "GeneName": "stx2fb",
+                                "Identity": 100,
+                                "Coverage": 98.48
+                            },
+                            {
+                                "GeneName": "stx2a",
+                                "Identity": 99.79,
+                                "Coverage": 94.26
+                            }
+                        ]
+                    },                    
+                    "PredictedSerotype": {
+                        "Serotype": "O8:H9",
+                        "Software": "seq_typing"
+                    },
+                    "PredictedStxType": "NT:stx2e",
+                    "MLSTSequenceType": {
+                        "ST": 23,
+                        "Software": "mlst",
+                        "GeneList": [
+                            {
+                                "purA": "13",
+                                "mdh": "20",
+                                "recA": "7",
+                                "adk": "6",
+                                "gyrB": "12",
+                                "icd": "1",
+                                "fumC": "4"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "publicRawReadCreate": {
+            "localRawReadId": "test2345235",
+            "instrumentModelCode": null,
+            "isolateSpecieCode": "RF-00003072-PAR",
+            "libraryLayoutCode": 1,
+            "fastQ1FileName": "test_1.fq.gz",
+            "fastQ1Md5": "a4d7caca033ed44ef6c787c2b98339fa"
+        },
+        "publicEpidemiologicalDataCreate": {
+            "localRawReadId": "test2345235",
+            "SampleData": {
+                "sampling_local_id": "sample123",
+                "programme_type_id": null,
+                "programme_info_id": null,
+                "sampler_id": "CX02A",
+                "sampling_point_id": "E520A",
+                "sampling_country_id": "IT",
+                "sampling_country_origin_id": null,
+                "sampling_area_id": null,
+                "sampling_year": 2019,
+                "sampling_month": null,
+                "sampling_day": null,
+                "sampling_matrix_code": "A06HL#F04.A0EZH",
+                "sampling_matrix_free_text": "Brazil nuts from brand NUTS"
+            },
+            "IsolateData": {
+                "isolation_local_id": "Isolate12345",
+                "isolation_year": null,
+                "isolation_month": null,
+                "isolation_day": null
+            }
+        }
+    }
+}

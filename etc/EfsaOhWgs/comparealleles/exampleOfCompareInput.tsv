@@ -1,0 +1,3 @@
+species	baseAllelicProfileFile	testAllelicProfileFile
+STEC	/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/comparealleles/chewbbaca_alleles_base.tsv	/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/comparealleles/chewbbaca_alleles_test.tsv
+L.monocytogenes	/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/comparealleles/chewbbaca_alleles_base.tsv	/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/comparealleles/chewbbaca_alleles_test1.tsv

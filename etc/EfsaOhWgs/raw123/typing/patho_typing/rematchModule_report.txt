@@ -1,0 +1,26 @@
+#gene	percentage_gene_coverage	gene_mean_read_coverage	percentage_gene_low_coverage	number_positions_multiple_alleles	percentage_gene_identity
+stx1a	100.0	25.24	0.0	0	99.58
+stx1b	100.0	19.7	0.0	0	100.0
+ipah	0.0	0.0	100.0	0	0.0
+stx2fb	0.0	0.0	100.0	0	0.0
+stx2fa	0.0	0.0	100.0	0	0.0
+sta1	0.0	0.0	100.0	0	0.0
+stx2a	0.0	0.0	100.0	0	0.0
+stx2b	0.0	0.0	100.0	0	0.0
+eae	100.0	27.11	1.84	0	100.0
+eltb	0.0	0.0	100.0	0	0.0
+elta	0.0	0.0	100.0	0	0.0
+aata	0.0	0.0	100.0	0	0.0
+icsa	0.0	0.0	100.0	0	0.0
+aap	0.0	0.0	100.0	0	0.0
+aggr	0.0	0.0	100.0	0	0.0
+sta2	0.0	0.0	100.0	0	0.0
+aaic	0.0	0.0	100.0	0	0.0
+bfpa	0.0	0.0	100.0	0	0.0
+#general
+>number_absent_genes
+15
+>number_genes_multiple_alleles
+0
+>mean_sample_coverage
+24.02

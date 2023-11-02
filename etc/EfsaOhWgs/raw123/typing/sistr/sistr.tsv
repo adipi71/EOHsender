@@ -1,0 +1,2 @@
+cgmlst_ST	cgmlst_distance	cgmlst_genome_match	cgmlst_matching_alleles	cgmlst_subspecies	fasta_filepath	genome	h1	h2	o_antigen	qc_messages	qc_status	serogroup	serovar	serovar_antigen	serovar_cgmlst
+660408169	0.00909090909091	LT2	327	enterica	/home/peter/Downloads/sistr-LT2-example/LT2.fasta	LT2	i	"1,2"	"1,4,[5],12"		PASS	B	Typhimurium	Typhimurium	Typhimurium

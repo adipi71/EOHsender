@@ -1,0 +1,291 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "payload": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "object",
+          "properties": {
+            "localRawReadId": {
+              "type": "string"
+            },
+            "AnalyticalPipelineInfoTag": {
+              "type": "string"
+            },
+            "QualityCheck": {
+              "type": "object",
+              "properties": {
+                "Fastp": {
+                  "type": "object",
+                  "properties": {
+                    "ReadMeanLength": {
+                      "type": "integer"
+                    },
+                    "Q30Rate": {
+                      "type": "number"
+                    },
+                    "TotalBases": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "ReadMeanLength",
+                    "Q30Rate",
+                    "TotalBases"
+                  ]
+                },
+                "AssemblyQualityStatistics": {
+                  "type": "object",
+                  "properties": {
+                    "AssemblyCoverage": {
+                      "type": "integer"
+                    },
+                    "AssemblyStatistics": {
+                      "type": "object",
+                      "properties": {
+                        "N50Contigs": {
+                          "type": "integer"
+                        },
+                        "GenomeSize": {
+                          "type": "integer"
+                        },
+                        "NumberOfContigs": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "N50Contigs",
+                        "GenomeSize",
+                        "NumberOfContigs"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "AssemblyCoverage",
+                    "AssemblyStatistics"
+                  ]
+                }
+              },
+              "required": [
+                "Fastp",
+                "AssemblyQualityStatistics"
+              ]
+            },
+            "Results": {
+              "type": "object",
+              "properties": {
+                "ParamCode": {
+                  "type": "object",
+                  "properties": {
+                    "MLSTSequenceType": {
+                      "type": "object",
+                      "properties": {
+                        "ST": {
+                          "type": "integer"
+                        },
+                        "Software": {
+                          "type": "string"
+                        },
+                        "GeneList": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "purA": {
+                                  "type": "string"
+                                },
+                                "mdh": {
+                                  "type": "string"
+                                },
+                                "recA": {
+                                  "type": "string"
+                                },
+                                "adk": {
+                                  "type": "string"
+                                },
+                                "gyrB": {
+                                  "type": "string"
+                                },
+                                "icd": {
+                                  "type": "string"
+                                },
+                                "fumC": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "purA",
+                                "mdh",
+                                "recA",
+                                "adk",
+                                "gyrB",
+                                "icd",
+                                "fumC"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "ST",
+                        "Software",
+                        "GeneList"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "MLSTSequenceType"
+                  ]
+                }
+              },
+              "required": [
+                "ParamCode"
+              ]
+            }
+          },
+          "required": [
+            "localRawReadId",
+            "QualityCheck",
+            "Results"
+          ]
+        },
+        "publicRawReadCreate": {
+          "type": "object",
+          "properties": {
+            "localRawReadId": {
+              "type": "string"
+            },
+            "instrumentModelCode": {
+              "type": "null"
+            },
+            "isolateSpecieCode": {
+              "type": "string"
+            },
+            "libraryLayoutCode": {
+              "type": "integer"
+            },
+            "fastQ1FileName": {
+              "type": "string"
+            },
+            "fastQ1Md5": {
+              "type": "string"
+            },
+            "fastQ2FileName": {
+              "type": "string"
+            },
+            "fastQ2Md5": {
+              "type": "string"
+            }            
+          },
+          "required": [
+            "localRawReadId",
+            "isolateSpecieCode",
+            "libraryLayoutCode",
+            "fastQ1FileName",
+            "fastQ1Md5"
+          ],
+          "if": {
+            "properties": { "libraryLayoutCode": { "const": 2 } }
+          },
+          "then": {
+            "required": ["fastQ2FileName"]
+          }          
+        },
+        "publicEpidemiologicalDataCreate": {
+          "type": "object",
+          "properties": {
+            "localRawReadId": {
+              "type": "string"
+            },
+            "SampleData": {
+              "type": "object",
+              "properties": {
+                "sampling_local_id": {
+                  "type": "string"
+                },
+                "programme_type_id": {
+                  "type": "null"
+                },
+                "programme_info_id": {
+                  "type": "null"
+                },
+                "sampler_id": {
+                  "type": "string"
+                },
+                "sampling_point_id": {
+                  "type": "string"
+                },
+                "sampling_country_id": {
+                  "type": "string"
+                },
+                "sampling_country_origin_id": {
+                  "type": "null"
+                },
+                "sampling_area_id": {
+                  "type": "null"
+                },
+                "sampling_year": {
+                  "type": "integer"
+                },
+                "sampling_month": {
+                  "type": "null"
+                },
+                "sampling_day": {
+                  "type": "null"
+                },
+                "sampling_matrix_code": {
+                  "type": "string"
+                },
+                "sampling_matrix_free_text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sampling_local_id",
+                "sampling_country_id",
+                "sampling_year",
+                "sampling_matrix_code",
+                "sampling_matrix_free_text"
+              ]
+            },
+            "IsolateData": {
+              "type": "object",
+              "properties": {
+                "isolation_local_id": {
+                  "type": "string"
+                },
+                "isolation_year": {
+                  "type": "null"
+                },
+                "isolation_month": {
+                  "type": "null"
+                },
+                "isolation_day": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "isolation_local_id"
+              ]
+            }
+          },
+          "required": [
+            "localRawReadId",
+            "SampleData",
+            "IsolateData"
+          ]
+        }
+      },
+      "required": [
+        "result",
+        "publicRawReadCreate"
+      ]
+    }
+  },
+  "required": [
+    "payload"
+  ]
+}

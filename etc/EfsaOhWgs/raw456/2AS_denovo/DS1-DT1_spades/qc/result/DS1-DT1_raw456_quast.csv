@@ -1,0 +1,2 @@
+Assembly	# contigs	Largest contig	Total length	N50	N75	L50	L75	# N's per 100 kbp
+raw456_spades_scaffolds_L200	15	816329	2900000	729781	434356	2	4	0.23

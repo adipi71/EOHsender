@@ -1,0 +1,2 @@
+#Sample_name,Total_reads,Total_Mbases,Min_length,Max_length,Mean_length,Q30_reads,Min_avgQual,Max_avgQual,Mean_avgQual
+raw123,1708716,254.6,149,149,149.0,92.11,14.845637583892618,35.86577181208054,33.77

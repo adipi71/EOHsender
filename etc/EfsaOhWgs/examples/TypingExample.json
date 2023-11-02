@@ -1,0 +1,37 @@
+{       "localRawReadId": "test2",
+	"AnalyticalPipelineInfoTag": "Listeria Pipeline",
+	"QualityCheck": {
+		"Fastp": {
+			"ReadMeanLength": 200,
+			"Q30Rate": 0.9,
+			"TotalBases": 341193922
+		},
+		"AssemblyQualityStatistics": {
+			"AssemblyCoverage": 30,
+			"AssemblyStatistics": {
+				"N50Contigs": 960000,
+				"GenomeSize": 2965601,
+				"NumberOfContigs": 100
+			}
+		}
+	},
+	"Results": {
+    "ParamCode": {
+		"MLSTSequenceType": {
+			"ST": "11",
+			"Software": "mlst V1",
+			"GeneList": [
+				{
+            "bglA": "49",
+            "abcZ": "7",
+            "dat": "1",
+            "cat": "19",
+            "ldh": "24",
+            "lhkA": "1",
+            "dapE": "6"
+				}
+			]
+		}
+	}
+	}
+}

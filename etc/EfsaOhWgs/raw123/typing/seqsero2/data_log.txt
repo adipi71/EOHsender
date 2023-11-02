@@ -1,0 +1,20 @@
+[bwa_index] Pack FASTA... 0.00 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 0.08 seconds elapse.
+[bwa_index] Update BWT... 0.00 sec
+[bwa_index] Pack forward-only FASTA... 0.00 sec
+[bwa_index] Construct SA from BWT and Occ... 0.04 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa index H_and_O_and_specific_genes.fasta
+[main] Real time: 0.186 sec; CPU: 0.124 sec
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 547448 sequences (80000120 bp)...
+[M::process] read 398369 sequences (58230219 bp)...
+[M::mem_process_seqs] Processed 547448 reads in 31.281 CPU sec, 31.208 real sec
+[M::mem_process_seqs] Processed 398369 reads in 29.249 CPU sec, 29.296 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 17 -t 8 H_and_O_and_specific_genes.fasta 19-SA03159-0_S9_1.fastq.gz
+[main] Real time: 71.449 sec; CPU: 63.890 sec
+/usr/bin/env: 'python': No such file or directory
+file	Listeria sensu stricto (rpoB)	L. monocytogenes (rpoB)	Escherichia spp. (rpoB)	S. bongori (rpoB)	S. enterica(rpoB)	S. bongori (invA)	subsp. I (invA)	subsp. II (clade a: invA)	subsp. II (clade b: invA)	subsp. IIIa (invA)	subsp. IIIb (invA)	subsp.IV (invA)	subsp. VI (invA)	subsp. VII (invA)	subsp. II (clade VIII : invA)
+19-SA03159-0_S9_1.fastq.gz	0	0	0	0	100	0	100	0	0	0	0	0	0	0	0
