@@ -52,14 +52,13 @@ public class EfsaCompatibility extends GenericMain {
 	 * If more rows defines different cfg:outputDir, only the first one is set
 	 */
 	private static void _setOutputDir(String s) {
-		if (!outputDir.equals("")) {
-			return;
+		if (outputDir.isEmpty()){
+			outputDir = (s.isEmpty())?"./":s;
 		}
-		if (!Str.isDirectory(s)) {
-			ctx.lg.error("_setOutputDir: not a directory" + s);
+		if (!Str.isDirectory(outputDir)) {
+			ctx.lg.error("_setOutputDir: not a directory:" + outputDir + ";");
 			System.exit(1);
 		}
-		outputDir = s;
 	}
 
 	/**
@@ -99,26 +98,35 @@ public class EfsaCompatibility extends GenericMain {
 	 * @param args
 	 */
 	private static void init(String[] args) throws Exception {
-		ctx.cfg = new JSONObject();
-		// ctx.cfg.setBeanProperties(ctx); //TO RESTORE??
-		// decrypt_password_key(ctx.cfg); //TO RESTORE
-		CgMlstCompare.ctx = ctx;
-
-		String inputFile = "";
-		if (args.length > 0) {
-			inputFile = args[0];
-		} else {
-			dirClass = EfsaCompatibility.class.getResource(".").getPath();
-			String dirProject = dirClass + "../../../../../../";
-			String dirEtc = dirProject + "etc/";
-			inputFile = dirEtc +
-			// "EfsaOhWgs/comparealleles/exampleOfCompareInput.tsv";
-					"EfsaOhWgs/comparealleles/exampleOfCompareInputEXTENDED.tsv";
+		JSONObject cfg = new JSONObject(); // TO REMOVE
+		String inputFilePath = "";
+		try {
+			if (args.length > 0) {
+				inputFilePath = args[0];
+			} else {
+				dirClass = EfsaCompatibility.class.getResource(".").getPath();
+				String dirProject = dirClass + "../../../../../../";
+				inputFilePath = dirProject + "etc/EfsaOhWgs/comparealleles/exampleOfCompareInputEXTENDED.tsv";
+				//inputFilePath = dirProject + "etc/EfsaOhWgs/comparealleles/exampleOfCompareInput.tsv";
+			}
+		} catch (Exception e) {
+			inputFilePath = "";
 		}
-		inputFilePath = inputFile;
+		//cfg.setBeanProperties(ctx);
+		//ctx.cfg = cfg;
+		ctx.cfg = new JSONObject();
 		inputFileName = Str.getFileNameFromPath(inputFilePath);
-
-		ctx.cfg.put("file:manualInput", inputFile); // "/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/comparealleles/exampleOfCompareInput.tsv");
+		if (inputFilePath.isEmpty()){
+			ctx.lg.error(" Input file is missing\n");
+			System.exit(1);
+		}
+		if (!Str.fileExists(inputFilePath)) {
+			ctx.lg.error(" Input file  is not a file:" + inputFilePath);
+			System.exit(1);
+		}
+		CgMlstCompare.ctx=ctx;
+		ctx.cfg.put("file:manualInput", inputFilePath);
+		ctx.lg.log("inputFilePath:" + inputFilePath); 
 	}
 }// =====================================================================
 
@@ -153,8 +161,8 @@ class CgMlstCompare {
 	 */
 	public static void main(String[] args) {
 		checkAllelicProfiles(
-				"/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/comparealleles/chewbbaca_alleles_base.tsv",
-				"/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/comparealleles/chewbbaca_alleles_test.tsv");
+				"etc/EfsaOhWgs/comparealleles/chewbbaca_alleles_base.tsv",
+				"etc/EfsaOhWgs/comparealleles/chewbbaca_alleles_test.tsv");
 	}
 
 	/**
@@ -197,7 +205,6 @@ class CgMlstCompare {
 		joIn = ctx.joInput;
 		joOut = new JSONObject(joIn).prune();
 		ctx.joAlCompareReport = joOut;
-
 		try {
 			joAlBase = JSONArray.jsonArrayFromCSVFile(fileBase, "\t").getJSONObject(0);
 			joAlTest = JSONArray.jsonArrayFromCSVFile(fileTest, "\t").getJSONObject(0);
@@ -211,6 +218,7 @@ class CgMlstCompare {
 			species = joIn.getS("species");
 			if (!species.matches("^(L.monocytogenes|STEC|Salmonella)$")) {
 				ctx.lg.error("species not indicated: " + species);
+				ctx.lg.error(" row " + joIn.toString(3));
 				System.exit(1);
 			}
 			if (_isListeriaMonocytogenes()) {

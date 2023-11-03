@@ -58,16 +58,14 @@ public class EfsaOhWgs extends GenericMain {
 
 			_writeJsonOutput();
 		}
-		// printJson();
-		// ctx.lg.stopOnError();
 	}
 
 	/**
 	 * @return array of objects (one for each row of TSV file)
 	 */
 	private static JSONArray _readSettings() {
-		ctx.cfg
-				.put("file:manualInput", "/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/exampleOfManualInput.tsv");
+		// ctx.cfg .put("file:manualInput",
+		// "/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/exampleOfManualInput.tsv");
 		String file = ctx.cfg.getS("file:manualInput");
 
 		try {
@@ -144,7 +142,7 @@ public class EfsaOhWgs extends GenericMain {
 				String keyValue = joJsonPositions.getS(k);
 				String value = ctx.joInput.getS(keyValue);
 				if (value.isEmpty()) {
-					ctx.lg.error("_manualValues: mandatory value is missing:" + keyValue );
+					ctx.lg.error("_manualValues: mandatory value is missing:" + keyValue);
 					System.out.println(jo.toString(3));
 					System.exit(1);
 				}
@@ -224,19 +222,42 @@ public class EfsaOhWgs extends GenericMain {
 	 * @param args
 	 */
 	private static void init(String[] args) throws Exception {
-		// JSONObject cfg= importInternalCfg(); TO RESTORE
 		JSONObject cfg = new JSONObject(); // TO REMOVE
-		// overwriteJson(cfg, args);
-		// dirClass = EfsaOhWgs.class.getResource(".").getPath();
-
+		String inputFilePath = "";
+		try {
+			if (args.length > 0) {
+				inputFilePath = args[0];
+			} else {
+				dirClass = EfsaCompatibility.class.getResource(".").getPath();
+				String dirProject = dirClass + "../../../../../../";
+				inputFilePath = dirProject + "etc/EfsaOhWgs/exampleOfManualInput.tsv";
+			}
+		} catch (Exception e) {
+			inputFilePath = "";
+		}
 		cfg.setBeanProperties(ctx);
 		ctx.cfg = cfg;
-		// decrypt_password_key(ctx.cfg); //TO RESTORE
+		String inputFileName = Str.getFileNameFromPath(inputFilePath);
+		ctx.cfg.put("file:manualInput", inputFilePath);
+		if (inputFilePath.isEmpty()){
+			ctx.lg.error(" Input file is missing\n");
+			System.exit(1);
+		}
+		if (!Str.fileExists(inputFilePath)) {
+			ctx.lg.error(" Input file  is not a file:" + inputFilePath);
+			System.exit(1);
+		}
+
+		// decrypt_password_key(ctx.cfg); //TO RESTORE;
 		JsonFiller.ctx = ctx;
 		RawDataMgr.ctx = ctx;
 		AssemblyMgr.ctx = ctx;
 		TypingMgr.ctx = ctx;
 		CgMlstMgr.ctx = ctx;
+
+		ctx.lg.log("inputFilePath:" + inputFilePath); 
+		ctx.cfg.put("file:manualInput", inputFilePath); // "/ws/bioinfo/genpat-bioinfotools/etc/EfsaOhWgs/comparealleles/exampleOfCompareInput.tsv");
+
 	}
 
 	/**
