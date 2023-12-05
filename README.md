@@ -2,8 +2,6 @@
 
 EFSA One Health WGS System helping tools for Programmatic Submission
 
-!!! Work  in progress  !!!
-
 ## Sender
 
 Prepares CLI and API Programmatic Submission JSON files for the EFSA One Health WGS System
