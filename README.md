@@ -37,3 +37,18 @@ Calculates a compatibility report between two allelic profile result files calcu
 | *STEC*  | 5 |  10 | 15 | 
 
 
+# Usage example
+
+This example has been tested on Linux with OpenJdk 11. It should work on any Java enabled Linux machine.
+
+1. Download the last release (https://github.com/adipi71/EOHsender/releases/latest),  
+2. Extract EOHsender.tar.gz
+3. Launch on test data
+   
+```bash
+# launch eoh-sender on the test data
+sh eoh-sender.sh etc/EfsaOhWgs/comparealleles/exampleOfCompareInputEXTENDED.tsv
+
+# launch eoh-compatibility on the test data
+sh eoh-sender.sh etc/EfsaOhWgs/exampleOfManualInput.tsv
+```
